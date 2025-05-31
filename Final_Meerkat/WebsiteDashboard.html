@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Logo.png">
+  <title>WebsiteDashboard</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: white;
+      height: 100%;
+    }
+
+    body {
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    body.fade-in {
+      opacity: 1;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 220px; /* Increased width */
+      background-color: #051a54;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .sidebar img {
+      width: 100%;
+      max-width: 250px;
+      height: 120px;
+      object-fit: contain;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: thistle;
+      margin-bottom: 1rem;
+    }
+
+    .nav-link {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .nav-link.active {
+      background-color: white;
+      color: black;
+    }
+
+    .nav-link:not(.active) {
+      background-color: #102770;
+      color: white;
+    }
+
+    .nav-link:hover {
+      opacity: 0.9;
+    }
+
+    .main {
+      flex: 1;
+      padding: 2rem;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+    .top-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .search-bar {
+      background-color: #f1f1f1;
+      padding: 0.5rem 1rem;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .icons {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .icons img {
+      width: 28px;
+      height: 34px;
+      cursor: pointer;
+    }
+
+   .content img {
+  width: 80%;              
+  max-width: 700px;        
+  height: auto;            
+  margin: 10px auto;
+  display: block;
+  border-radius: 12px;
+}
+    .overlay-wrapper {
+      position: relative;
+      display: inline-block;
+      width: 100%;
+      max-width: 900px;
+      margin: 10px auto;
+    }
+
+   .overlay-button {
+  position: absolute;
+  top: 229px;
+  left: 636px;
+  width: 150px;
+  height: 184px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 12px;
+  cursor: pointer;
+  color: #102770;
+  font-weight: bold;
+  font-size: 14px;
+  text-indent: 0; 
+
+}
+.button-tag {
+  position: absolute;
+  top: 225px;
+  left: 670px;
+  font-size: 13px;
+  background-color: white;
+  color: #102770;
+  padding: 4px 10px;
+  border-radius: 20px;
+  font-weight: bold;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  pointer-events: none;
+  z-index: 1;
+}
+
+
+    .back-button {
+      background-color: #ff76a3;
+      color: white;
+      padding: 8px 16px;
+      border: none;
+      border-radius: 20px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      text-decoration: none;
+      font-size: 0.9rem;
+    }
+
+    .back-button:hover {
+      background-color: #e96092;
+    }
+
+    h1 {
+      margin-left: 10px; 
+      margin-top: 30px;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="Dlogo.png" alt="Meerkat Health Insurance" />
+      <h2>Navigation</h2>
+      <a class="nav-link active" href="#">Dashboard</a>
+      <a class="nav-link" href="MyPlan.html">My Plan</a>
+      <a class="nav-link" href="BuildYourMeerkat.html">My Meerkat</a>
+      <a class="nav-link" href="Dashboard.html">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+    <div class="main">
+      <div class="top-bar">
+        <h1>Dashboard</h1>
+        <div class="icons">
+          <div class="search-bar">
+            <img src="SL.png" alt="Search" />
+            <input type="text" placeholder="Search" style="border: none; background: transparent; outline: none;" />
+          </div>
+          <img src="BL.png" alt="Notifications" />
+          <a href="BuildYourMeerkat.html">
+            <img src="ML.png" alt="Meerkat" />
+          </a>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="overlay-wrapper">
+          <img src="Dashboard.png" alt="Dashboard Overview" />
+          
+          <!-- Transparent clickable area -->
+          <a href="Youryearinhealth.html" class="overlay-button"></a>
+
+          <!-- Label on top of the button -->
+          <div class="button-tag">⭐ Click to view</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    window.addEventListener("DOMContentLoaded", () => {
+      document.body.classList.add("fade-in");
+    });
+  </script>
+
+</body>
+</html>

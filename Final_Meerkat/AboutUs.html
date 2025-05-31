@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>About Us Page</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville:400,700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      background: #FEF8D8;
+      font-family: 'Libre Baskerville', serif;
+    }
+
+    .container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 90vh;
+      padding: 2rem;
+    }
+
+    .text-group {
+      margin-left: 3rem;
+    }
+
+    .main-title {
+      font-size: 54px;
+      color: #122871;
+    }
+
+    .sub-title {
+      font-size: 24px;
+      color: #122871;
+      margin-top: 1rem;
+    }
+
+    .side-image {
+      width: 150px;
+      height: auto;
+    }
+
+    .second-section {
+      background-color: #122871;
+      min-height: 100vh;
+      padding: 4rem 2rem;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+    }
+
+    .second-section h2 {
+      font-size: 40px;
+      margin-top: 4rem;
+      margin-bottom: 0.5rem;
+      color: #dec5ef;
+      font-family: 'Libre Baskerville', serif;
+      font-weight: 400;
+    }
+
+    .second-section p {
+      font-size: 20px;
+      color: #dec5ef;
+      font-family: 'Libre Baskerville', serif;
+      margin-bottom: 2rem;
+    }
+
+    .image-counter-wrapper {
+      position: relative;
+      width: 100%;
+      max-width: 600px;
+      margin-top: 2rem;
+    }
+
+    .side-image1 {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+  .counter-box {
+  position: absolute;
+  bottom: 150px; 
+  left: 237px;
+  font-size: 12px !important;
+  color: #122871;
+}
+
+    .counter {
+      font-size: 30px;
+    }
+
+  
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: #102770;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.nav-logo img.logo-img {
+  height: 35px;
+  display: block;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  color: #b5d8fd;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Libre Baskerville', serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+  border-bottom: 3px solid #f66b99;
+  padding-bottom: 0.2rem;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+@media (max-width: 780px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 0.5rem;
+  }
+
+  .nav-links a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+
+
+  </style>
+</head>
+ <header class="navbar">
+  <div class="nav-container">
+    <a href="Homepage.html" class="nav-logo">
+      <img src="MLogo.png" alt="Meerkat Logo" class="logo-img">
+    </a>
+    <nav class="nav-links">
+        <a href="Homepage.html">Home</a>
+  <a href="AboutUs.html" class="active">About Us</a>
+  <a href="Buildyourplan.html">Build Your Plan</a>
+ <a href="Homepage.html#contact">Contact</a>
+  <a href="Dashboard.html"><i class="fas fa-user"></i> Login</a>
+</nav>
+  </div>
+</header>
+<body>
+ 
+
+  <!-- First Section -->
+  <div class="container">
+    <img class="side-image" src="Meerkatprofile.png" alt="Meerkat Logo">
+    <div class="text-group">
+      <div class="main-title">Meerkat<br>Health Insurance</div>
+      <div class="sub-title">Health cover that changes with you</div>
+    </div>
+  </div>
+
+  <!-- Second Section -->
+  <div class="second-section">
+    <h2>Hey you...<span class="cursive">yeah you.</span></h2>
+    <p>let’s introduce ourselves</p>
+    <div class="image-counter-wrapper">
+      <img class="side-image1" src="AboutUs.png" alt="About Us Illustration">
+      <div class="counter-box">
+        <span id="counter" class="counter">30</span> 
+      </div>
+     
+    </div>
+
+  </div>
+
+  <!-- Counter Script -->
+  <script>
+    const counter = document.getElementById("counter");
+    let current = 27430;
+
+    function updateCounter() {
+      current += 7;
+      counter.textContent = current.toLocaleString();
+    }
+
+    counter.textContent = current.toLocaleString();
+
+   setInterval(updateCounter, 3000);
+
+  </script>
+  
+
+</body>
+</html>

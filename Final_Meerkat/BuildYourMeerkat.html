@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/png" href="Logo.png">
+  <title>BuildYourMeerkat</title>
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #102770;
+      height: 100%;
+    }
+
+    .container {
+      display: flex;
+      min-height: 100vh;
+    }
+
+    .sidebar {
+      width: 360px;  
+      background-color: #051a54;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      padding: 1rem;
+    }
+
+    .sidebar img {
+      width: 100%;
+      height: 70px;
+      object-fit: contain;
+      margin-bottom: 2rem;
+    }
+
+    .sidebar h2 {
+      margin-top: 0;
+      font-size: 1.1rem;
+      color: thistle;
+      margin-bottom: 1rem;
+    }
+
+    .nav-link {
+      padding: 0.8rem;
+      border: none;
+      border-radius: 8px;
+      text-align: left;
+      text-decoration: none;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+
+    .nav-link.active {
+      background-color: white;
+      color: black;
+    }
+
+    .nav-link:not(.active) {
+      background-color: #102770;
+      color: white;
+    }
+
+    .nav-link:hover {
+      opacity: 0.9;
+    }
+
+    .main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+
+
+    .content img {
+  width: 90%; 
+  max-width: 100%; 
+  height: auto;
+  display: block;
+
+}
+
+ 
+    .sidebar img {
+  width: 110%;  
+  max-width: 250px; 
+  height: 120px;
+  object-fit: contain;
+  margin-bottom: 2rem;
+}
+
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <img src="Dlogo.png" alt="Meerkat Health Insurance" />
+      <h2>Navigation</h2>
+      <a class="nav-link" href="WebsiteDashboard.html">Dashboard</a>
+      <a class="nav-link" href="MyPlan.html">My Plan</a>
+      <a class="nav-link active" href="#">My Meerkat</a>
+      <a class="nav-link" href="Dashboard.html">Logout</a>
+    </div>
+
+    <!-- Main Content -->
+      <div class="content">
+        <img src="Setting1.png" alt="Dashboard Overview" />
+      
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

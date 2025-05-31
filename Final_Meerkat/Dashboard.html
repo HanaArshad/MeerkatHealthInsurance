@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome Dashboard</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Libre Baskerville', serif;
+      background-color: #0d1b57;
+      color: white;
+      overflow-x: hidden;
+    }
+
+    .cta-section {
+      height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 0 20px;
+    }
+
+    .cta-section h2 {
+      font-size: 2.2rem;
+      font-weight: 400;
+      line-height: 1.4;
+      max-width: 700px;
+      margin-bottom: 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-section h2 em {
+      font-style: italic;
+      font-weight: 500;
+      color: #ff76a3;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      flex-wrap: wrap;
+      position: relative;
+      z-index: 2;
+    }
+
+    .btn {
+      background: #ff76a3;
+      color: white;
+      padding: 14px 34px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: bold;
+      font-size: 1rem;
+      box-shadow: 0 4px 12px rgba(255, 118, 163, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 16px rgba(255, 118, 163, 0.6);
+    }
+
+    /* Firework */
+    .firework-container {
+      position: absolute;
+      top: 70px;
+      right: 50px;
+      width: 120px;
+      height: 120px;
+      z-index: 1;
+    }
+
+    .firework path {
+      stroke-dasharray: 100;
+      stroke-dashoffset: 100;
+      animation: spark 2s ease-out infinite;
+    }
+
+    @keyframes spark {
+      0% {
+        stroke-dashoffset: 100;
+        opacity: 1;
+      }
+      100% {
+        stroke-dashoffset: 0;
+        opacity: 0;
+      }
+    }
+.home-button {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  background-color: transparent;
+  color: #c0e0ff;
+  border: 2px solid #c0e0ff;
+  padding: 10px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 0.9rem;
+  box-shadow: none;
+  transition: all 0.3s ease;
+  z-index: 5;
+}
+
+.home-button:hover {
+  background-color: #c0e0ff;
+  color: #0d1b57;
+}
+  </style>
+</head>
+
+<body>
+  <a href="Homepage.html" class="home-button"> ← Back</a>
+
+  <section class="cta-section">
+    <div class="firework-container">
+      <svg class="firework" viewBox="0 0 100 100">
+        <g stroke="#ff76a3" stroke-width="2">
+          <path d="M50,50 L50,10" />
+          <path d="M50,50 L85,25" />
+          <path d="M50,50 L90,50" />
+          <path d="M50,50 L85,75" />
+          <path d="M50,50 L50,90" />
+          <path d="M50,50 L15,75" />
+          <path d="M50,50 L10,50" />
+          <path d="M50,50 L15,25" />
+        </g>
+      </svg>
+    </div>
+    <div class="firework-container" style="top: auto; bottom: 70px; left: 50px; right: auto;">
+  <svg class="firework" viewBox="0 0 100 100">
+    <g stroke="#c0e0ff" stroke-width="2">
+      <path d="M50,50 L50,10" />
+      <path d="M50,50 L85,25" />
+      <path d="M50,50 L90,50" />
+      <path d="M50,50 L85,75" />
+      <path d="M50,50 L50,90" />
+      <path d="M50,50 L15,75" />
+      <path d="M50,50 L10,50" />
+      <path d="M50,50 L15,25" />
+    </g>
+  </svg>
+</div>
+
+    <h2>
+      Now that you’ve made it <em>this far</em>…<br />
+      let’s check out your dashboard!
+    </h2>
+
+    <div class="buttons">
+      <a href="WebsiteDashboard.html" class="btn">View Web Dashboard</a>
+      <a href="MoblieDashboad.html" class="btn">View Phone Dashboard </a>
+  
+      
+    </div>
+  </section>
+</body>
+</html>

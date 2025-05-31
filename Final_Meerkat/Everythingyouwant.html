@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title> Choose Your Extras</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    body {
+      font-family: 'Libre Baskerville', serif;
+      margin: 0;
+      background-color: #fdf7d7;
+      color: #122871;
+      padding: 3rem;
+    }
+    .item:hover {
+  background-color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.2s ease-in-out;
+}
+.summary button:first-of-type:hover {
+  background-color: #0e1d61;
+
+}
+
+.summary button:last-of-type:hover {
+  background-color: #ddd;
+  color: #102770;
+}
+
+    h1 {
+      font-size: 32px;
+      color: #122871;
+      margin-bottom: 0.25rem;
+    }
+
+    .subtext {
+      font-size: 18px;
+      margin-bottom: 0.5rem;
+      font-weight: bold;
+      color: #f66b99;
+    }
+
+    .smalltext {
+      font-size: 14px;
+      color: #122871;
+      margin-bottom: 2rem;
+    }
+
+    .container {
+  display: flex;
+  justify-content: flex-start; /* Align elements to the start */
+  align-items: flex-start;
+  gap: 8rem; /* smaller gap */
+  flex-wrap: wrap;
+}
+
+    .table-wrapper {
+      display: grid;
+      grid-template-columns: repeat(4, 2fr);
+      margin-left: 2rem; /
+      
+    }
+
+    .item {
+      background-color: #efcee4;
+      border: 1px solid #122871;
+      text-align: center;
+      cursor: pointer;
+      position: relative;
+      font-size: 14px;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      padding: 0.5rem;
+      
+    }
+
+    .item.selected {
+      background-color: white;
+    }
+
+    .item::after {
+      content: '\2713';
+      position: absolute;
+      top: 8px;
+      right: 10px;
+      font-size: 16px;
+      color: green;
+      display: none;
+    }
+
+    .item.selected::after {
+      display: block;
+    }
+
+    .item img {
+      max-width: 36px;
+      height: auto;
+      margin-bottom: 0.3rem;
+    }
+
+    .item i {
+      font-size: 24px;
+      margin-bottom: 0.3rem;
+      color: #122871;
+    }
+
+    .summary {
+      background-color: white;
+      padding: 2rem;
+      border-radius: 20px;
+      max-width: 360px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .summary h2 {
+      font-size: 28px;
+      margin-bottom: 1rem;
+    }
+
+    .summary ul {
+      padding-left: 1.2rem;
+      font-size: 16px;
+      margin-top: 1rem;
+    }
+
+    .summary .price {
+      color: #122871;
+      margin: 0.5rem 0;
+      font-size: 24px;
+      font-weight: bold;
+    }
+
+    .summary button {
+      margin-top: 1.5rem;
+      width: 100%;
+      padding: 1rem;
+      border: none;
+      border-radius: 999px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    .summary button:first-of-type {
+      background-color: #122871;
+      color: #efcee4;
+    }
+
+    .summary button:last-of-type {
+      background: #eee;
+      color: #122871;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .table-wrapper {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .summary {
+        max-width: 100%;
+      }
+    }
+    .back-button-wrapper-right {
+  text-align: right;
+  padding: 1.5rem 2rem;
+  
+}
+  .next-button {
+      background-color: #f66b99;
+      color: white;
+      font-size: 1rem;
+      font-family: 'Libre Baskerville', serif;
+      padding: 10px 30px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      white-space: nowrap;
+    }
+
+    .next-button:hover {
+      opacity: 0.9;
+    }
+.back-tagline-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem;
+  flex-wrap: wrap;
+}
+
+.tagline-img {
+  max-width: 80%;
+  height: auto;
+}
+  </style>
+</head>
+<body>
+ <div class="back-tagline-row">
+  <img src="Tagline.png" alt="Tagline" class="tagline-img">
+  <div class="back-button-wrapper-right">
+    <a href="OurRecommendation.html">
+      <button class="next-button">← Back to previous step</button>
+    </a>
+  </div>
+</div>
+  <div class="container">
+    <div class="table-wrapper" id="options">
+      <div class="item" data-name="Dental"><i class="fas fa-tooth"></i>Dental</div>
+      <div class="item" data-name="Doctors"><i class="fas fa-user-md"></i>Doctors</div>
+      <div class="item" data-name="Medication"><i class="fas fa-pills"></i>Medication</div>
+      <div class="item" data-name="Physiotherapy"><i class="fas fa-running"></i>Physiotherapy</div>
+      <div class="item" data-name="Rehab"><i class="fas fa-procedures"></i>Rehab</div>
+      <div class="item" data-name="Hearing aids"><i class="fas fa-deaf"></i>Hearing Aids</div>
+      <div class="item" data-name="Optical care"><i class="fas fa-glasses"></i>Optical Care</div>
+      <div class="item" data-name="Therapy"><i class="fas fa-brain"></i>Therapy</div>
+      <div class="item" data-name="Chiropractor"><i class="fas fa-hands"></i>Chiropractor</div>
+      <div class="item" data-name="Podiatry"><i class="fas fa-shoe-prints"></i>Podiatry</div>
+      <div class="item" data-name="Orthopedic"><i class="fas fa-bone"></i>Orthopedic</div>
+      <div class="item" data-name="Chemotherapy"><i class="fas fa-vial"></i>Chemotherapy</div>
+      <div class="item" data-name="Urology"><i class="fas fa-bath"></i>Urology</div>
+      <div class="item" data-name="Radiology"><i class="fas fa-x-ray"></i>Radiology</div>
+      <div class="item" data-name="TCM"><i class="fas fa-leaf"></i>TCM</div>
+      <div class="item" data-name="Dietetics"><i class="fas fa-apple-alt"></i>Dietetics</div>
+      <div class="item" data-name="Osteopathy"><i class="fas fa-spa"></i>Osteopathy</div>
+      <div class="item" data-name="Remedial massage"><i class="fas fa-hand-sparkles"></i>Massage</div>
+      <div class="item" data-name="Exercise physiology"><i class="fas fa-dumbbell"></i>Exercise Physiology</div>
+      <div class="item" data-name="Nutrition"><i class="fas fa-carrot"></i>Nutrition</div>
+      <div class="item" data-name="Hypnotherapy"><i class="fas fa-eye"></i>Hypnotherapy</div>
+      <div class="item" data-name="Laser eye surgery"><i class="fas fa-eye-dropper"></i>Laser Eye</div>
+      <div class="item" data-name="Counselling"><i class="fas fa-comments"></i>Counselling</div>
+      <div class="item" data-name="Emergency ambulance"><i class="fas fa-ambulance"></i>Ambulance</div>
+    </div>
+
+    <div class="summary">
+      <h2>Your Cover</h2>
+      <p id="price" class="price">$0/week<br><span style="font-size: 14px; color: #555; font-weight: normal;">$0/day</span></p>
+      <ul id="cover-list">
+        <li>Select items to build your cover</li>
+      </ul>
+      <button onclick="window.location.href='dashboard.html'">Sign up today</button>
+
+      <button onclick="window.location.href='Homepage.html'">See More Suggestions</button>
+    </div>
+    
+  </div>
+  
+  <script>
+    const items = document.querySelectorAll('.item');
+    const coverList = document.getElementById('cover-list');
+    const priceTag = document.getElementById('price');
+
+    items.forEach(item => {
+      item.addEventListener('click', () => {
+        item.classList.toggle('selected');
+        updateCover();
+      });
+    });
+
+    function updateCover() {
+      const selected = document.querySelectorAll('.item.selected');
+      let total = 0;
+
+      if (selected.length === 0) {
+        coverList.innerHTML = '<li>Select items to build your cover</li>';
+      } else {
+        const html = Array.from(selected).map(el => `<li>${el.dataset.name}</li>`).join('');
+        coverList.innerHTML = html;
+        selected.forEach(() => {
+          total += Math.random() * 3 + 1; // Random value between $1–$4
+        });
+      }
+
+      total = Math.round(total * 100) / 100;
+      const daily = Math.round((total / 7) * 100) / 100;
+      priceTag.innerHTML = `$${total}/week<br><span style="font-size: 14px; color: #e892b9; font-style: italic;">That’s only $${daily} a day!</span>`;
+    }
+  </script>
+</body>
+</html>

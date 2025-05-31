@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Homepage</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+ <link href="https://fonts.cdnfonts.com/css/open-sauce-one" rel="stylesheet">
+
+
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      font-family: 'Libre Baskerville', serif;
+      scroll-behavior: smooth;
+    }
+
+    section {
+      position: relative;
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .responsive-image {
+      width: 100%;
+      max-width: 1340px;
+      height: auto;
+      display: block;
+      margin: 0 auto;
+    }
+
+    .s2-image {
+      width: 110%;
+    }
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #102770;
+  padding: 1rem 2rem;
+  z-index: 1000;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.nav-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+
+.nav-logo img.logo-img {
+  height: 35px;
+  display: block;
+}
+
+.nav-links a {
+  margin-left: 1.5rem;
+  color: #b5d8fd;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Libre Baskerville', serif;
+  transition: color 0.3s ease;
+}
+
+.nav-links a.active {
+  border-bottom: 3px solid #f66b99;
+  padding-bottom: 0.2rem;
+}
+
+.nav-links a:hover {
+  color: white;
+}
+
+@media (max-width: 780px) {
+  .nav-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-links {
+    margin-top: 0.5rem;
+  }
+
+  .nav-links a {
+    display: block;
+    margin: 0.5rem 0;
+  }
+}
+
+
+
+    .logo-img {
+  height: 35px;
+  display: block;
+}
+
+    
+
+    .testimonials {
+      background-color: #c0e0ff;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .testimonial-heading {
+      font-size: 40px;
+      margin-bottom: 3rem;
+      color: #122871;
+    }
+
+    .testimonial-wrapper {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .testimonial-card {
+      background-color: #fef8d8;
+      border-radius: 16px;
+      padding: 2rem;
+      max-width: 320px;
+      width: 100%;
+      text-align: left;
+      position: relative;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+    .section-6 .testimonial-heading {
+  font-size: 40px; 
+}
+
+.section-6 .testimonial-card p {
+  font-size: 19px;
+}
+
+.section-6 ul li {
+  font-size: 18px; 
+  line-height: 1.8;
+}
+
+.section-6 .date {
+  font-size: 18px; 
+}
+
+
+    .profile-img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      object-fit: cover;
+      display: block;
+      margin: 0 auto 1rem;
+    }
+
+    .name-date {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: #aaa;
+      margin-bottom: 1rem;
+      font-size: 15px;
+    }
+   
+
+    .name {
+      color: #e892b9;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    .arrow {
+      font-size: 18px;
+      color: #122871;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .arrow.rotate {
+      transform: rotate(90deg);
+    }
+.reminder-container {
+  position: relative;
+  display: inline-block;
+  width: 100%;
+  max-width: 1340px;
+  margin: 0 auto;
+}
+
+.reminder-container img {
+  width: 100%;
+  display: block;
+}
+
+.reminder-form {
+  position: absolute;
+  top: 74%; 
+  left: 70%; 
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 2rem;
+  border-radius: 16px;
+  box-shadow: none;
+}
+
+
+
+.reminder-form input {
+  display: block;
+  width: 350px;
+  padding: 0.75rem;
+  margin: 0.5rem auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+}
+
+.reminder-form button {
+  background-color: #122871;
+  color: white;
+  padding: 0.75rem 2rem;
+  border: none;
+  border-radius: 999px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 1rem;
+}
+.reminder-form select {
+  display: block;
+  width: 350px;
+  padding: 0.75rem;
+  margin: 0.5rem auto;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  background-color: white;
+}
+
+.reminder-popup {
+  display: none;
+  margin-top: 1rem;
+  background-color: #f66b99;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: bold;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+
+    .testimonial-card p,
+    .more-content {
+      font-size: 15px;
+      color: #122871;
+    }
+
+    .more-content {
+      display: none;
+      margin-top: 1rem;
+    }
+
+    .more-content ul {
+      padding-left: 1.2rem;
+      line-height: 1.6;
+    }
+
+    .section-1 { background-color: #fdf7d7; }
+    .section-2 { background-color: #fdf7d7; }
+    .section-3 { background-color: #051a54; color: #fff; }
+    .section-4 { background-color: #e5bee8; }
+    .section-5 { background-color: #112871; color: #fff; }
+    .section-6 { background-color: #c0e0ff; }
+    .section-7 { background-color: #e5bee8; }
+    .section-8 { background-color: #102770; color: #fff; }
+
+    .section-4 {
+      padding: 6rem 2rem;
+      display: flex;
+      justify-content: space-around;
+      align-items: stretch;
+      flex-wrap: wrap;
+      gap: 3rem;
+      text-align: center;
+    }
+
+   
+.card {
+  flex: 1 1 340px;
+  max-width: 340px;
+
+  margin: 0;           
+}
+    .card h2 {
+      font-style: italic;
+      font-size: 26px;
+      margin-bottom: 1rem;
+      color: #122871;
+      align-items: center;
+    }
+
+    .card p {
+      font-size: 18px;
+      color: #122871;
+      margin-bottom: 2rem;
+      flex-grow: 1;
+      align-items: center;
+    }
+   .card img {
+  display: block;
+  max-width: 350px;     
+  height: auto;
+
+
+  
+}
+
+    .card button {
+      background-color: #122871;
+      color: white;
+      padding: 1rem 2rem;
+      border: none;
+      border-radius: 999px;
+      font-size: 17px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-top: auto;
+    }
+
+    .card button:hover {
+      background-color: #0e1d61;
+    }
+
+.section-6 ul li {
+  line-height: 1.6; 
+}
+
+.popup-btn {
+  position: absolute;
+  bottom: 5.5%; 
+  left: 49%;
+  transform: translateX(-50%);
+  padding: 1.5rem 8.5rem;
+  background-color: #f66b99; 
+  color: white;
+  border: none;
+  border-radius: 999px;
+  font-size: 17px;
+  cursor: pointer;
+  z-index: 2; 
+}
+
+.popup-btn:hover {
+  background-color: #d6719e;
+ 
+}
+.section-6 {
+    font-family: 'Open Sauce One', sans-serif;
+
+  }
+  .section-7 {
+  display: flex;
+  justify-content: center;
+}
+
+    .popup-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 999;
+    }
+
+    .popup-content {
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+
+    .close-btn {
+      margin-top: 1rem;
+      padding: 0.5rem 1.5rem;
+      background-color: #122871;
+      color: white;
+      border: none;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+.section-6 ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin-left: 0; 
+
+}
+.input-label {
+  width: 350px;           
+  margin: 0 auto 5px auto; 
+  text-align: left;       
+  font-weight: bold;      
+  font-size: 14px;        
+}
+
+
+.cover-tag {
+  background-color: #112871; 
+  color: #e5bee8;
+  font-size: 12px;            
+  width: auto;
+  border-radius: 50px;        
+  padding: 10px 19px;          
+  margin-right: 9px;
+  display: inline-block;
+  vertical-align: middle;
+}
+    @media (max-width: 768px) {
+      .testimonial-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="Homepage.html" class="nav-logo">
+  <img src="MLogo.png" alt="Meerkat Logo" class="logo-img">
+</a>
+      <nav class="nav-links">
+          <a href="Homepage.html"class ="active" >Home</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="Buildyourplan.html">Build Your Plan</a>
+        <a href="#contact">Contact</a>
+        <a href="Dashboard.html">
+  <i class="fas fa-user"></i> Login
+</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Sections -->
+  <section class="section-1">
+    <img src="S1.png" alt="Decorative" class="responsive-image">
+  </section>
+
+  <section class="section-2">
+    <img src="S2.png" alt="Decorative" class="responsive-image s2-image">
+  </section>
+
+  <section class="section-3">
+    <img src="Section3.png" alt="Decorative" class="responsive-image">
+  </section>
+
+  <section class="section-4">
+    <div class="card">
+      <h2>Your Coverage</h2>
+      <img src="YourCoverage.png" alt="pic">
+      <p>Tell us about yourself to match with your perfect plan</p>
+      <button onclick="window.location.href='Buildyourplan.html'">Build your plan</button>
+    </div>
+
+    <div class="card">
+      <h2>Your Dashboard</h2>
+      <img src="YourDashboard.png" alt="pic">
+      <p>An interactive, personalised dashboard for you to track usage, optimise value, and customise your plan</p>
+      <button onclick="window.location.href='Dashboard.html'">Sign up to view</button>
+    </div>
+
+    <div class="card">
+      <h2>Your Year In Health</h2>
+      <img src="YearInHealth.png" alt="pic">
+      <p>Health coverage, uncovered. Review your year in health with Meerkat.</p>
+      <button onclick="window.location.href='Youryearinhealth.html'">Uncovered</button>
+    </div>
+  </section>
+
+ <section class="section-5">
+  <div class="image-button-wrapper">
+    <img src="Section5.png" alt="Decorative" class="responsive-image">
+    <button class="popup-btn" onclick="openPopup()">Discover More</button>
+  </div>
+</section>
+
+  <section class="section-6 testimonials">
+  <h2 class="testimonial-heading">Who we’ve helped!</h2>
+  <div class="testimonial-wrapper">
+
+    <div class="testimonial-card">
+      <img src="Holly.png" alt="Holly" class="profile-img">
+      <div class="name-date">
+        <span class="name">Holly</span>
+      <span class="cover-tag">Basic plan</span>
+        <span class="arrow" onclick="toggleDetails(this)">&#9654;</span>
+      </div>
+      <p>I am a fourth year law student and work in a call centre. I found that the <strong>basic plan</strong> works best for me.</p>
+      <div class="more-content">
+        <ul>
+          <li>As a student, I wasn't in a position to splash out on a comprehensive plan, but still wanted that peace of mind in case anything unexpected happened.</li><br>
+          <li>I love that I can add extras to my plan as soon as I am in a position to spend a little more on my coverage.</li>
+        </ul>
+        <span class="date" style="color: #cab5b3; margin-top: 10px; display: inline-block;">August 2025</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="Erin.png" alt="Erin" class="profile-img">
+      <div class="name-date">
+        <span class="name">Erin</span>
+        <span class="cover-tag">Just for you</span>
+        
+        <span class="arrow" onclick="toggleDetails(this)">&#9654;</span>
+      </div>
+      <p>I’m on my feet all day, and require extra care for my physical health. Because of this, the <strong>comprehensive plan</strong> suits me best!</p>
+      <div class="more-content">
+        <ul>
+          <li>I love having extra physio, acupuncture and massages; especially that monthly appointment with my remedial massage therapist Caleb.</li><br>
+          <li>I plan to start my own business, so I decided to add additional mental health support to my coverage.</li>
+        </ul>
+        <span class="date" style="color: #cab5b3; margin-top: 10px; display: inline-block;">Jan 2025</span>
+      </div>
+    </div>
+
+    <div class="testimonial-card">
+      <img src="Martin.png" alt="Martin" class="profile-img">
+      <div class="name-date">
+        <span class="name">Martin</span>
+         <span class="cover-tag">Bonus plan</span>
+        <span class="arrow" onclick="toggleDetails(this)">&#9654;</span>
+      </div>
+      <p>I am an electronic music DJ, and travel a lot for work. <strong>Choosing my own extras</strong> allowed me to get the most out of my plan.</p>
+      <div class="more-content">
+        <ul>
+          <li>I’m not booking in for acupuncture or antenatal classes anytime soon. What I needed was a plan that felt flexible; something I could tailor to me.</li><br>
+          <li>I added cover for the things I actually use,  like physio (trust me, DJing for 6 hours straight does damage), dental, and a bit of mental health support when I’m burnt out from the travel.</li>
+        </ul>
+        <span class="date" style="color: #cab5b3; margin-top: 10px; display: inline-block;">Mar 2025</span>
+
+      </div>
+      
+    </div>
+
+  </div>
+</section>
+
+<section class="section-7">
+  <div class="reminder-container">
+    <img src="S7.png" alt="Decorative" class="responsive-image">
+    
+    <div class="reminder-form">
+      <div class="input-label">Email</div>
+      <input type="email" id="emailInput" placeholder="meerkat@gmail.com">
+       <div class="input-label">Set a reminder</div>
+      <select id="timeSelect">
+        <option value="">Select reminder time</option>
+        <option value="1 month">Remind me in 1 month</option>
+        <option value="3 months">Remind me in 3 months</option>
+        <option value="6 months">Remind me in 6 months</option>
+      </select>
+
+      <button onclick="showReminder()">Remind me later</button>
+      <div id="reminderPopupOverlay" class="popup-overlay">
+  <div class="popup-content">
+    <p id="reminderPopupMessage"></p>
+    <button class="close-btn" onclick="closeReminderPopup()">Close</button>
+  </div>
+</div>
+</section>
+
+
+  <section id="contact" class="section-8">
+    <img src="Section8.png" alt="Decorative" class="responsive-image">
+  </section>
+
+  <!-- Popup -->
+  <div id="popup" class="popup-overlay">
+    <div class="popup-content">
+      <p>Big things loading… More to come</p>
+      <button class="close-btn" onclick="closePopup()">Close</button>
+    </div>
+  </div>
+
+
+  <script>
+    function toggleDetails(el) {
+      const card = el.closest(".testimonial-card");
+      const more = card.querySelector(".more-content");
+      more.style.display = more.style.display === "block" ? "none" : "block";
+      el.classList.toggle("rotate");
+    }
+
+    function openPopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+function showReminder() {
+  const email = document.getElementById('emailInput').value.trim();
+  const time = document.getElementById('timeSelect').value;
+  const overlay = document.getElementById('reminderPopupOverlay');
+  const message = document.getElementById('reminderPopupMessage');
+
+  if (email === "" || time === "") {
+    message.textContent = "Please fill out both fields!";
+  } else {
+    message.textContent = `Reminder’s time-traveling.`;
+  }
+
+  overlay.style.display = 'flex';
+}
+
+function closeReminderPopup() {
+  document.getElementById('reminderPopupOverlay').style.display = 'none';
+}
+  </script>
+  
+
+</body>
+</html>

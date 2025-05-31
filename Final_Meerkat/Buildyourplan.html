@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Build Your Plan</title>
+  <link rel="icon" type="image/png" href="Logo.png">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Libre Baskerville', serif;
+      background-color: #102770;
+      color: #efcee4;
+      scroll-behavior: smooth;
+    }
+
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background-color: #102770;
+      padding: 1rem 2rem;
+      z-index: 1000;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    }
+
+    .nav-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      max-width: 1300px;
+      margin: 0 auto;
+    }
+
+    .nav-logo img.logo-img {
+      height: 35px;
+      display: block;
+    }
+
+    .nav-links a {
+      margin-left: 1.5rem;
+      color: #b5d8fd;
+      text-decoration: none;
+      font-weight: 500;
+      font-family: 'Libre Baskerville', serif;
+      transition: color 0.3s ease;
+    }
+
+    .nav-links a.active {
+      border-bottom: 3px solid #f66b99;
+      padding-bottom: 0.2rem;
+    }
+
+    .nav-links a:hover {
+      color: white;
+    }
+
+    @media (max-width: 780px) {
+      .nav-container {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .nav-links {
+        margin-top: 0.5rem;
+      }
+
+      .nav-links a {
+        display: block;
+        margin: 0.5rem 0;
+      }
+    }
+
+    .image-container {
+      width: 100%;
+    }
+
+    .full-screen-img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .matchmaker-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: flex-start;
+      width: 100%;
+      box-sizing: border-box;
+      padding: 40px;
+      gap: 40px;
+    }
+
+    .form-section {
+      max-width: 500px;
+      flex: 1;
+      min-width: 300px;
+      margin-left: 90px;
+    }
+
+    .title-illustration {
+      max-width: 100%;
+      margin-bottom: 10px;
+      height: auto;
+    }
+
+    .info-container {
+  margin-top: -10px;
+  margin-bottom: -20px;
+  text-align: right;
+  color: white;
+  cursor: pointer;
+}
+
+    .info-icon {
+      font-size: 22px;
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+
+    .info-text {
+      font-size: 1rem;
+      text-decoration: underline;
+    }
+
+    .form-content {
+      margin-top: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-size: 1rem;
+
+    }
+
+    input[type="text"],
+    select {
+      width: 95%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border: none;
+      border-radius: 10px;
+      background-color: #efcee4;
+      font-size: 1rem;
+      color: #1a1a1a;
+    }
+
+    .next-button {
+      width: 95%;
+      background-color: #f66b99;
+      color: #0a2372;
+      font-weight: bold;
+      font-size: 1.2rem;
+      padding: 14px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .next-button:hover {
+      opacity: 0.9;
+    }
+
+    .right-section {
+      flex: 1;
+      min-width: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .illustration {
+      max-width: 100%;
+      height: auto;
+      margin-left: 50px;
+    }
+
+    .checkbox-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5rem 1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .info-popup {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .popup-box {
+      background-color: #fff;
+      color: #122871;
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 450px;
+      text-align: center;
+    }
+    #changes {
+  width: 90%;         
+  padding: 12px;
+  font-size: 1rem;
+  border-radius: 10px;
+  background-color: #efcee4;
+  border: none;
+  color: #1a1a1a;
+}
+
+    .close-info-btn {
+      margin-top: 1.5rem;
+      background-color: #122871;
+      color: #fff;
+      border: none;
+      padding: 0.6rem 1.5rem;
+      border-radius: 999px;
+      cursor: pointer;
+    }
+
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <header class="navbar">
+    <div class="nav-container">
+      <a href="Homepage.html" class="nav-logo">
+        <img src="MLogo.png" alt="Meerkat Logo" class="logo-img">
+      </a>
+      <nav class="nav-links">
+        <a href="Homepage.html">Home</a>
+        <a href="AboutUs.html">About Us</a>
+        <a href="Buildyourplan.html" class="active">Build Your Plan</a>
+        <a href="Homepage.html#contact">Contact</a>
+        <a href="Dashboard.html"><i class="fas fa-user"></i> Login</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Fullscreen Image -->
+  <div class="image-container">
+    <img src="BYP1.png" alt="Full Screen Image" class="full-screen-img">
+  </div>
+
+  <!-- Matchmaker Section -->
+  <div class="matchmaker-container">
+    <div class="form-section">
+      <img src="TitleYM.png" alt="Title" class="title-illustration">
+
+     
+
+      <div class="form-content">
+         <!-- Info icon + text -->
+      <div class="info-container" onclick="openInfoPopup()">
+        <i class="fas fa-circle-info info-icon"></i>
+        <span class="info-text">Why we ask this</span>
+      </div>
+
+        <label for="age">How old are you?</label>
+        <input type="text" id="age" placeholder="25">
+
+        <label for="location">Where do you live?</label>
+        <input type="text" id="location" placeholder="NSW">
+
+        <label style="margin-bottom: 0.5rem;">What do you enjoy doing? <span style="font-size: 0.9rem;">(Select all that apply)</span></label>
+        <div class="checkbox-grid">
+          <label><input type="checkbox" name="hobby" value="Dancing"> Dancing</label>
+          <label><input type="checkbox" name="hobby" value="Cooking"> Cooking</label>
+          <label><input type="checkbox" name="hobby" value="Yoga"> Yoga</label>
+          <label><input type="checkbox" name="hobby" value="Gaming"> Gaming</label>
+          <label><input type="checkbox" name="hobby" value="Travel"> Travel</label>
+          <label><input type="checkbox" name="hobby" value="Art"> Art</label>
+        </div>
+
+        <label for="job">What do you do for a living?</label>
+        <select id="job">
+          <option>Accountant</option>
+          <option>Engineer</option>
+          <option>Teacher</option>
+        </select>
+
+        <label for="income">How much do you earn?</label>
+        <select id="income">
+          <option>Less than $91,000</option>
+          <option>$91,000 - $150,000</option>
+          <option>More than $150,000</option>
+        </select>
+
+        <label for="priority">What's most important to you in a health plan?</label>
+        <select id="priority">
+          <option>Affordability</option>
+          <option>Access to private hospitals</option>
+          <option>Extras like dental and physio</option>
+          <option>Mental health support</option>
+        </select>
+        <label for="changes">Any upcoming changes to your lifestyle or care needs?</label>
+        <input type="text" id="changes" placeholder="Optional e.g. travel, surgery">
+
+
+        <a href="OurRecommendation.html"><button class="next-button">Next</button></a>
+      </div>
+    </div>
+
+    <div class="right-section">
+      <img src="Matchmaker.png" alt="Puzzle Match" class="illustration">
+    </div>
+  </div>
+
+  <!-- Info Popup -->
+  <div id="info-popup" class="info-popup">
+    <div class="popup-box">
+      <p>We ask these questions to better match you with the right health insurance plan. Your lifestyle, job, and preferences help us recommend a plan that fits your needs and budget. All responses are kept private and used only for your plan recommendation.</p>
+      <button class="close-info-btn" onclick="closeInfoPopup()">Close</button>
+    </div>
+  </div>
+
+
+  <script>
+    function openInfoPopup() {
+      document.getElementById("info-popup").style.display = "flex";
+    }
+
+    function closeInfoPopup() {
+      document.getElementById("info-popup").style.display = "none";
+    }
+  </script>
+
+</body>
+</html>
