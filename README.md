@@ -1,7 +1,6 @@
 # Meerkat Health Insurance
 
 This is the MVP of our prototype for Meerkat Health Insurance — a password-protected website developed for the UTS Industry Innovation Project. When you open the site, you'll be prompted to enter a password. If entered correctly, you’ll be redirected to the homepage.
-Current Link to our website: https://benevolent-kitsune-09bae0.netlify.app/
 
  How to Run or Deploy This Project
 
