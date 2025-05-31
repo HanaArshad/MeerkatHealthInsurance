@@ -1,6 +1,7 @@
 # Meerkat Health Insurance
 
 This is the MVP of our prototype for Meerkat Health Insurance — a password-protected website developed for the UTS Industry Innovation Project. When you open the site, you'll be prompted to enter a password. If entered correctly, you’ll be redirected to the homepage.
+Current Link to our website: https://benevolent-kitsune-09bae0.netlify.app/homepage 
 
  How to Run or Deploy This Project
 
@@ -17,3 +18,5 @@ To deploy online (e.g. with Netlify):
 3. Click **“Add new site” → “Deploy manually”**.
 4. Drag and drop the unzipped folder into Netlify’s upload area.
 5. A live URL should be generated!
+
+This github and link live website link will be aviable till 31st August 2025, if you need the code please download a copy before then :)
